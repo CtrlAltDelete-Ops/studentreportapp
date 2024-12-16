@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Add Student</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="title">Add a New Student</h2>
+    <h4 class="subtitle">Fill in the details below to add a student to the system.</h4>
+    <form action="/add" method="POST" class="modern-form">
+        <label for="name">Student Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter student's name" required>
+
+        <label for="email">Student Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter student's email" required>
+
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Enter subject name" required>
+
+        <label for="grade">Grade</label>
+        <input type="number" id="grade" name="grade" placeholder="Enter grade" step="0.01" required>
+
+        <button type="submit" class="primary-button">Submit</button>
+    </form>
+
+    <!-- Back to Home Button -->
+    <form action="{{ url_for('index') }}" method="GET" style="margin-top: 15px;">
+        <button class="secondary-button">Back</button>
+    </form>
+</div>
+{% endblock %}

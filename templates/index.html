@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Student Reports</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="title">Student Reports</h2>
+    <h4 class="subtitle">Track and manage student information with ease.</h4>
+
+    <!-- Add New Student Button -->
+    <form action="{{ url_for('add_student') }}" method="GET">
+        <button class="primary-button">Add New Student</button>
+    </form>
+
+    <!-- Student Reports Table -->
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Grade</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+                {% for grade in student.grades %}
+                <tr>
+                    <td>{{ student.name }}</td>
+                    <td>{{ student.email }}</td>
+                    <td>{{ grade.subject.name }}</td>
+                    <td>{{ grade.grade }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_student', student_id=student.id) }}" method="POST" style="display:inline;">
+                            <button class="secondary-button" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
