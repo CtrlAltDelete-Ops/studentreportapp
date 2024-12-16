@@ -4,7 +4,7 @@ Welcome to the Student Report App! This is a web application built using Flask t
 
 Features
 Add new students and their details.
-delete studentsand theier reports.
+delete students and theier reports.
 View student reports in an organized format.
 Deployed and accessible online through Heroku.
 
