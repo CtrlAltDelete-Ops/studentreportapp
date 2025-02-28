@@ -13,6 +13,8 @@ You can access the live version of the app by clicking the link below:
 
 [Student Report App](https://studentreportapp-3a01bda32f03.herokuapp.com/)
 
+NOTE: The heroku app was taken down due to fees being required for it, but the user will be able to run the app locally.
+
 Deployment
 The app is hosted on Heroku, providing an easy way to access it online. It uses a Flask web server and Gunicorn for production readiness.
 
